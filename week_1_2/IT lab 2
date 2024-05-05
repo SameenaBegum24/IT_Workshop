@@ -1,0 +1,219 @@
+cat> grepfilter.txt
+welcome to ubuntu
+hii this is liniux/ unix commands
+rgukt rajiv gandhi university  knowledge  technology
+user@rosh:~$ grep "rgukt" grepfilter.txt
+rgukt rajiv gandhi university  knowledge  technology
+user@rosh:~$ grep -n "unix" grepfilter.txt
+2:hii this is liniux/ unix commands
+user@rosh:~$ grep -h "unix" grepfilter.txt
+hii this is liniux/ unix commands
+user@rosh:~$ grep -v "unix" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university  knowledge  technology
+user@rosh:~$ grep -c "unix" grepfilter.txt
+1
+user@rosh:~$ grep -i "unix" grepfilter.txt
+hii this is liniux/ unix commands
+user@rosh:~$ grep -e "unix" grepfilter.txt
+hii this is liniux/ unix commands
+user@rosh:~$ grep -f "unix" grepfilter.txt
+grep: unix: No such file or directory
+user@rosh:~$ grep -o "unix" grepfilter.txt
+unix
+user@rosh:~$ grep -o "a" grepfilter.txt
+a
+a
+a
+user@rosh:~$ grep -o "o" grepfilter.txt
+o
+o
+o
+o
+o
+o
+user@rosh:~$ grep -v "this" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university  knowledge  technology
+user@rosh:~$ grep  "^unix" grepfilter.txt
+user@rosh:~$ grep -l "this" grepfilter.txt
+grepfilter.txt
+user@rosh:~$ cat> monthFile.txt
+user@rosh:~$ cat> monthFile.txt
+august
+september
+novenber
+april
+user@rosh:~$ sort -M monthFile.txt
+april
+august
+september
+novenber
+user@rosh:~$ cat>  numbersort.txt
+45
+12
+43
+89
+6
+15
+user@rosh:~$ sort -M numbersort.txt
+12
+15
+43
+45
+6
+89
+user@rosh:~$ sort -n numbersort.txt
+6
+12
+15
+43
+45
+89
+user@rosh:~$ cat>  numbersort.txt
+39.4
+32.4
+26..3
+user@rosh:~$ sort -n numbersort.txt
+26..3
+32.4
+39.4
+user@rosh:~$  cat > geekfile.txt
+unix is great os
+UBuntu                
+RGUKT Basar Nirmal
+user@rosh:~$ 
+user@rosh:~$ sed 's/great/GREAT/' geekfile.txt
+unix is GREAT os
+UBuntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/UBuntu/ubuntu/' geekfile.txt
+unix is great os
+ubuntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed '2d' geekfile.txt
+unix is great os
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/UBuntu/ubuntu/p' geekfile.txt
+unix is great os
+ubuntu
+ubuntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/r/R/2' geekfile.txt
+unix is great os
+UBuntu
+RGUKT Basar NiRmal
+user@rosh:~$ sed 's/u/U/3' geekfile.txt
+unix is great os
+UBuntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/u/U/' geekfile.txt
+Unix is great os
+UBUntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/u/U/+' geekfile.txt
+sed: -e expression #1, char 7: unknown option to `s'
+user@rosh:~$ sed 's/u/+/' geekfile.txt
++nix is great os
+UB+ntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/u/+/g' geekfile.txt
++nix is great os
+UB+nt+
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/+/u/g' geekfile.txt
+unix is great os
+UBuntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/B/b/2' geekfile.txt
+unix is great os
+UBuntu
+RGUKT Basar Nirmal
+user@rosh:~$ sed 's/B/b/' geekfile.txt
+unix is great os
+Ubuntu
+RGUKT basar Nirmal
+user@rosh:~$ sed 's/B/b/g' geekfile.txt
+unix is great os
+Ubuntu
+RGUKT basar Nirmal
+user@rosh:~$ 
+
+ sort -r numFile.txt
+45
+45
+23
+21
+user@rosh:~$ sort -o numFile.txt
+user@rosh:~$ sort -nr numFile.txt
+user@rosh:~$ sort -n numFile.txt
+user@rosh:~$ cat> numFile.txt
+23
+14
+56
+78
+user@rosh:~$ sort -n numFile.txt
+14
+23
+56
+78
+user@rosh:~$ sort -r numFile.txt
+78
+56
+23
+14
+user@rosh:~$ sort -nr numFile.txt
+78
+56
+23
+14
+user@rosh:~$ sort -c numFile.txt
+sort: numFile.txt:2: disorder: 14
+user@rosh:~$ cat> numFile.txt
+23
+12
+67
+12
+23
+user@rosh:~$ sort -u numFile.txt
+12
+23
+67
+user@rosh:~$ cat> awkFile.txt
+venky window id 4567
+arun stirage id 3421
+Name unix    id 3481         
+user linux   id 2312
+user@rosh:~$ awk '{print$1 $3}'awkFile.txt
+awk: 1: unexpected character '.'
+user@rosh:~$ awk '{print$1 $3}' awkFile.txt
+venkyid
+arunid
+Nameid
+userid
+user@rosh:~$ awk '{print $1 ,$3}' awkFile.txt
+venky id
+arun id
+Name id
+user id
+user@rosh:~$ free m
+              total        used        free      shared  buff/cache   available
+Mem:        7915756     1139208     5628376      149052     1148172     6366788
+Swap:       2097148           0     2097148
+user@rosh:~$ awk '{print $2,$3}' free m
+awk: cannot open free (No such file or directory)
+user@rosh:~$ free m |awk '/mem/'
+user@rosh:~$ awk '{print $1}' free m
+awk: cannot open free (No such file or directory)
+user@rosh:~$ awk '{print $4}' awkFile.txt
+4567
+3421
+3481
+2312
+user@rosh:~$ ^C
+chmod a=w awkFile.txt
+user@rosh:~$ ls -lrt
+
+
+
+

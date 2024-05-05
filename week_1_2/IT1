@@ -1,0 +1,123 @@
+cat> grepfilter.txt
+welcome 
+hii this is is linux/unix commands
+rgukt  rajiv gandhi university
+user@sam:~$ grep "rgukt" grepfilter.txt
+rgukt  rajiv gandhi university
+user@sam:~$ grep -n unix  grepfilter.txt
+2:hii this is is linux/unix commands
+user@sam:~$ cat> monthfilter.txt
+oct
+march      
+june 
+july
+dec
+user@sam:~$ sort -M monthfile.txt
+sort: cannot read: monthfile.txt: No such file or directory
+user@sam:~$ sort -M monthfilter.txt
+march
+june 
+july
+oct
+dec
+user@sam:~$ sort -M daysfilter.txt
+sort: cannot read: daysfilter.txt: No such file or directory
+user@sam:~$ cat> grepfilter.txt
+monday
+tues
+wed
+thus
+fri
+sat
+user@sam:~$ sort -M daysfilter.txt
+sort: cannot read: daysfilter.txt: No such file or directory
+user@sam:~$ sort -M grepfilter.txt
+fri
+monday
+sat
+thus
+tues
+wed
+user@sam:~$ cat> daysfilter.txt
+mon
+tus
+wed
+fri
+sat
+user@sam:~$ sort -M daysfilter.txt
+fri
+mon
+sat
+tus
+wed
+user@sam:~$ sort -M namesfilter.txt
+sort: cannot read: namesfilter.txt: No such file or directory
+user@sam:~$ cat> namesfilter.txt
+sameena
+kavya
+roshini
+varshini
+user@sam:~$ sort -M namesfilter.txt
+kavya
+roshini
+sameena
+varshini
+user@sam:~$ cat> settingfilter.txt
+sameena
+shabnam
+varshini
+user@sam:~$ set 's|sameena|SAMEENA|' settingfilter.txt
+user@sam:~$ cat> file2.txt
+sameena
+kavya
+user@sam:~$ set 's|sameena|SAMEENA|' file2.txt
+user@sam:~$ sed 's|sameena|SAMEENA|' file2.txt
+SAMEENA
+kavya
+user@sam:~$ sort -d  daysfilter.txt
+fri
+mon
+sat
+tus
+wed
+user@sam:~$ sort -n  daysfilter.txt
+fri
+mon
+sat
+tus
+wed
+user@sam:~$ sort -o  daysfilter.txt
+
+user@sam:~$ sort -v  daysfilter.txt
+sort: invalid option -- 'v'
+Try 'sort --help' for more information.
+user@sam:~$ set 's|sameena|SAMEENA|g' file2.txt
+user@sam:~$ sed  's|sameena|SAMEENA|g' file2.txt
+SAMEENA
+kavya
+user@sam:~$ sed  's|s|SAMEENA|g' file2.txt
+SAMEENAameena
+kavya
+user@sam:~$ sed  's|s|++|g' file2.txt
+++ameena
+kavya
+user@sam:~$ sed  's|s|+|g' file2.txt
++ameena
+kavya
+user@sam:~$ sed  's|s|A|g' file2.txt
+Aameena
+kavya
+user@sam:~$ sed  's|s|A|P' file2.txt
+sed: -e expression #1, char 7: unknown option to `s'
+user@sam:~$ sed  's|s|A|2G' file2.txt
+sed: -e expression #1, char 8: unknown option to `s'
+user@sam:~$ sed  's|sameena|SAMEENA|2g' file2.txt
+sameena
+kavya
+user@sam:~$ sed  's|sameena|SAMEENA|3g' file2.txt
+sameena
+kavya
+user@sam:~$ sed  '2s|sameena|SAMEENA|2g' file2.txt
+sameena
+ ftp://ftp.dlptest.com/
+ 
